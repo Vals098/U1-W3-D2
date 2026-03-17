@@ -7,7 +7,7 @@ const changeTitle = function (newTitle) {
   title.innerText = newTitle
 }
 
-changeTitle("Nuovo Titolo")
+changeTitle("Nuovo Titolo") //verified
 
 /* ESERCIZIO 2
        Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
@@ -18,7 +18,7 @@ const addClassToTitle = function () {
   title2.classList.add("myHeading")
 }
 
-addClassToTitle()
+addClassToTitle() //verified
 
 /* ESERCIZIO 3
        Scrivi una funzione che cambi il testo dei p figli di un div
@@ -33,7 +33,7 @@ const changePcontent = function (newPar) {
   })
 }
 
-changePcontent("Questo è il nuovo testo dei p figli di un div")
+changePcontent("Questo è il nuovo testo dei p figli di un div") //verified
 
 /* ESERCIZIO 4
        Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
@@ -51,7 +51,7 @@ const changeUrls = function () {
   })
 }
 
-changeUrls()
+changeUrls() //verified
 
 /* ESERCIZIO 5
        Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
@@ -64,7 +64,7 @@ const addToTheSecond = function () {
   secondUl.appendChild(newLi)
 }
 
-addToTheSecond()
+addToTheSecond() //verified
 
 /* ESERCIZIO 6
        Scrivi una funzione che aggiunga un paragrafo al primo div
@@ -77,7 +77,7 @@ const addParagraph = function () {
   firstDiv.appendChild(parInDiv)
 }
 
-addParagraph()
+addParagraph() //verified
 
 /* ESERCIZIO 7
        Scrivi una funzione che faccia scomparire la prima lista non ordinata
@@ -97,7 +97,7 @@ const hideFirstUl = function () {
   firstUl.style.display = "none"
 }
 
-hideFirstUl()
+hideFirstUl() //verified
 
 /* ESERCIZIO 8 
        Scrivi una funzione che renda verde il background di ogni lista non ordinata
@@ -125,19 +125,39 @@ const paintItGreen = function () {
   })
 }
 
-paintItGreen()
+paintItGreen() //verified
 
 /* ESERCIZIO 9
  Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
       */
 
-const makeItClickable = function () {}
+const makeItClickable = function () {
+  //take the element
+  const titleH1 = document.querySelector("h1")
+  //add the element.eventListener("action", function(){code})
+  titleH1.addEventListener("click", function () {
+    titleH1.innerText = titleH1.innerText.slice(0, -1)
+  })
+}
+
+makeItClickable() //verified
 
 /* ESERCIZIO 10
 Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
       */
 
-const revealFooterLink = function () {}
+const revealFooterLink = function () {
+  const footer = document.querySelector("footer")
+  const linkFooter = footer.querySelector("a")
+
+  //linkFooter.addEventLinstener --> when the link in the footer is clicked
+  //footer.addEventListener --> when the footer is clicked
+  footer.addEventListener("click", function () {
+    alert(linkFooter.href)
+  })
+}
+
+revealFooterLink() //verified
 
 /* ESERCIZIO 11
 Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
