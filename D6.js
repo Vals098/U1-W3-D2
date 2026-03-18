@@ -115,12 +115,12 @@ hideFirstUl() //verified
 
 //.getElementsByTagName gives an HTML collection so if I want to use .forEach
 //I first have to convert it into an array
-// An alternative is directly transform it into an array using . querySelectorAll()
+//Using .qerySelectorAll I would have a Nodelist and it will accept .forEach (but not the other methods)
 
 const paintItGreen = function () {
   const uls = document.querySelectorAll("ul")
 
-  uls.forEach((ul) => {
+  Array.from(uls).forEach((ul) => {
     ul.style.backgroundColor = "green"
   })
 }
